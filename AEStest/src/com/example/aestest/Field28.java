@@ -1,9 +1,12 @@
 package com.example.aestest;
 
+
 import java.util.Arrays;
 
 
+
 public class Field28 {
+
 	/**
 	 * @param args
 	 * @return 
@@ -12,6 +15,7 @@ public class Field28 {
 	public static byte[] a = new byte[8];
 	static Field28 f = new Field28();
     public byte[] mul(byte[] m1, byte[] m2){
+    	//Field28 f = new Field28();
     	byte[][] m = new byte[8][8];
     	byte[] sum = new byte[8];
     	for (int i = 0; i < sum.length; i++)
@@ -97,9 +101,9 @@ public class Field28 {
     	}
     }
     
-	public String  run() {
-		// TODO Auto-generated method stub	
-		String ret = new String();
+    public String  run()  {
+		// TODO Auto-generated method stub		
+    	String ret = new String();
 		a = new byte[8];
 		byte[] b = new byte[8];
 		byte[] m = new byte[8];
@@ -108,13 +112,13 @@ public class Field28 {
 			a[i] = (byte) (Math.random()*2);
 			b[i] = (byte) (Math.random()*2);
 		}
-		ret += "a:"+Arrays.toString(a) + "\n";
+		ret += "a:"+Arrays.toString(a)+"\n";
 		ret += "b:"+Arrays.toString(b)+"\n";
 		
 		long start = System.currentTimeMillis();
         for(int i = 0; i < 100000; i++)
         	m = f.mul(a, b);
-        ret += "m:"+Arrays.toString(m) + "\n";
+        ret += "m:"+Arrays.toString(m)+"\n";
         long end = System.currentTimeMillis();
         ret += "time used for 100000 mutiply: " + (end - start) + " ms\n";
         
